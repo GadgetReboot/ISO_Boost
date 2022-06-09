@@ -1,0 +1,489 @@
+EESchema Schematic File Version 4
+LIBS:GR_ISO_Boost-cache
+EELAYER 29 0
+EELAYER END
+$Descr A 11000 8500
+encoding utf-8
+Sheet 1 1
+Title "Isolated Boost Converter"
+Date "2022-06-01"
+Rev "1.1"
+Comp "Gadget Reboot"
+Comment1 "https://www.youtube.com/gadgetreboot"
+Comment2 "https://github.com/GadgetReboot/ISO_Boost"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:R_US R15
+U 1 1 5DB73DFD
+P 4175 3525
+F 0 "R15" H 4245 3571 50  0000 L CNN
+F 1 "1K" H 4245 3480 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4105 3525 50  0001 C CNN
+F 3 "~" H 4175 3525 50  0001 C CNN
+F 4 "RES 1K OHM 1% 1/10W 0805" H 4175 3525 50  0001 C CNN "Desc"
+	1    4175 3525
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 5DB73E0A
+P 4175 3825
+F 0 "D2" V 4175 3725 50  0000 R CNN
+F 1 "LED" V 4122 3707 50  0001 R CNN
+F 2 "LED_SMD:LED_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 4175 3825 50  0001 C CNN
+F 3 "~" H 4175 3825 50  0001 C CNN
+F 4 "LED GREEN CLEAR 0805 SMD" H 4175 3825 50  0001 C CNN "Desc"
+F 5 "150080VS75000" H 4175 3825 50  0001 C CNN "Part #"
+	1    4175 3825
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4175 4050 4175 3975
+Text Notes 4025 4325 0    75   ~ 0
+Power
+$Comp
+L power:GNDREF #PWR026
+U 1 1 5E5E606B
+P 4175 4050
+F 0 "#PWR026" H 4175 3800 50  0001 C CNN
+F 1 "GNDREF" H 4425 3775 50  0001 C CNN
+F 2 "" H 4175 4050 50  0001 C CNN
+F 3 "" H 4175 4050 50  0001 C CNN
+	1    4175 4050
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GR_ISO_Boost-rescue:AP3012-extlib U1
+U 1 1 5DD62BD3
+P 6775 3650
+F 0 "U1" H 6550 3375 50  0000 C CNN
+F 1 "AP3012" H 6925 3375 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-5_HandSoldering" H 6800 3400 50  0001 L CIN
+F 3 "http://pdf.datasheet.live/datasheets-1/advanced_power_electronics/APE1707H-12-HF.pdf" H 6775 3650 50  0001 C CNN
+F 4 "IC REG BOOST ADJ 500MA SOT23-5" H 6775 3650 50  0001 C CNN "Desc"
+F 5 "AP3012KTR-G1" H 6775 3650 50  0001 C CNN "Part #"
+	1    6775 3650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Core_Iron L1
+U 1 1 5DD6618A
+P 6800 3300
+F 0 "L1" V 7025 3300 50  0000 C CNN
+F 1 "22uH" V 6934 3300 50  0000 C CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-60xx_HandSoldering" H 6800 3300 50  0001 C CNN
+F 3 "~" H 6800 3300 50  0001 C CNN
+F 4 "FIXED IND 22UH 1.5A 149.5MOHM SMD" H 6800 3300 50  0001 C CNN "Desc"
+F 5 "NR6045T220M" H 6800 3300 50  0001 C CNN "Part #"
+	1    6800 3300
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Diode:1N5822 D1
+U 1 1 5DD687E4
+P 7475 3300
+F 0 "D1" H 7475 3084 50  0000 C CNN
+F 1 "SS16" H 7475 3175 50  0000 C CNN
+F 2 "Diode_SMD:D_SMA_Handsoldering" H 7475 3125 50  0001 C CNN
+F 3 "http://www.vishay.com/docs/88526/1n5820.pdf" H 7475 3300 50  0001 C CNN
+F 4 "DIODE SCHOTTKY 60V 1A DO214AC" H 7475 3300 50  0001 C CNN "Desc"
+F 5 "SS16" H 7475 3300 50  0001 C CNN "Part #"
+	1    7475 3300
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R_Small_US R3
+U 1 1 5DD691BD
+P 7775 3850
+F 0 "R3" H 7707 3804 50  0000 R CNN
+F 1 "1K6" H 7707 3895 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7775 3850 50  0001 C CNN
+F 3 "~" H 7775 3850 50  0001 C CNN
+F 4 "RES 1.6K OHM 1% 1/10W 0805" H 7775 3850 50  0001 C CNN "Desc"
+	1    7775 3850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C3
+U 1 1 5DD696B3
+P 5600 3525
+F 0 "C3" H 5675 3550 50  0000 L CNN
+F 1 "1uF" H 5675 3425 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5600 3525 50  0001 C CNN
+F 3 "~" H 5600 3525 50  0001 C CNN
+F 4 "CAP CER 1uF 0805 X7R 50V" H 5600 3525 50  0001 C CNN "Desc"
+F 5 "CL21B105KBFNNNF" H 5600 3525 50  0001 C CNN "Part #"
+	1    5600 3525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 3300 6275 3300
+Wire Wire Line
+	6275 3300 6275 3550
+Wire Wire Line
+	6275 3550 6375 3550
+Wire Wire Line
+	5600 3425 5600 3300
+Wire Wire Line
+	5600 3300 5975 3300
+Connection ~ 6275 3300
+$Comp
+L power:GNDREF #PWR07
+U 1 1 5DF285E8
+P 5600 3750
+F 0 "#PWR07" H 5600 3500 50  0001 C CNN
+F 1 "GNDREF" H 5850 3475 50  0001 C CNN
+F 2 "" H 5600 3750 50  0001 C CNN
+F 3 "" H 5600 3750 50  0001 C CNN
+	1    5600 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 3750 5600 3625
+Wire Wire Line
+	7175 3550 7225 3550
+Wire Wire Line
+	7225 3550 7225 3300
+Wire Wire Line
+	7225 3300 6950 3300
+Wire Wire Line
+	7325 3300 7225 3300
+Connection ~ 7225 3300
+$Comp
+L power:GNDREF #PWR09
+U 1 1 5E02D420
+P 7225 3825
+F 0 "#PWR09" H 7225 3575 50  0001 C CNN
+F 1 "GNDREF" H 7475 3550 50  0001 C CNN
+F 2 "" H 7225 3825 50  0001 C CNN
+F 3 "" H 7225 3825 50  0001 C CNN
+	1    7225 3825
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7225 3825 7225 3750
+Wire Wire Line
+	7225 3750 7175 3750
+$Comp
+L power:GNDREF #PWR010
+U 1 1 5E19B1D6
+P 7775 4600
+F 0 "#PWR010" H 7775 4350 50  0001 C CNN
+F 1 "GNDREF" H 8025 4325 50  0001 C CNN
+F 2 "" H 7775 4600 50  0001 C CNN
+F 3 "" H 7775 4600 50  0001 C CNN
+	1    7775 4600
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	7775 3950 7775 4050
+$Comp
+L Device:R_Small_US R1
+U 1 1 5E24CEEF
+P 7775 3425
+F 0 "R1" H 7707 3379 50  0000 R CNN
+F 1 "33K" H 7707 3470 50  0000 R CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7775 3425 50  0001 C CNN
+F 3 "~" H 7775 3425 50  0001 C CNN
+F 4 "RES 33K OHM 1% 1/10W 0805" H 7775 3425 50  0001 C CNN "Desc"
+	1    7775 3425
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	7775 3325 7775 3300
+Wire Wire Line
+	7775 3300 7625 3300
+Wire Wire Line
+	7775 3750 7775 3650
+Connection ~ 7775 3650
+Wire Wire Line
+	7775 3650 7775 3525
+Text Notes 6025 4575 0    50   ~ 0
+VOut = 1.25*(1+Rtop/Rbot)\nVOut Min = approx. Vin = approx. 5v\nVOut Max = 1.25*(1+33K/(1K6 + 0r)) \n          = 27 V \n
+$Comp
+L Device:C_Small C4
+U 1 1 5E47D66B
+P 8125 3500
+F 0 "C4" H 8200 3525 50  0000 L CNN
+F 1 "1uF" H 8200 3400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8125 3500 50  0001 C CNN
+F 3 "~" H 8125 3500 50  0001 C CNN
+F 4 "CAP CER 1uF 0805 X7R 50V" H 8125 3500 50  0001 C CNN "Desc"
+F 5 "CL21B105KBFNNNF" H 8125 3500 50  0001 C CNN "Part #"
+	1    8125 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8125 3400 8125 3300
+$Comp
+L power:GNDREF #PWR08
+U 1 1 5E47D676
+P 8125 3675
+F 0 "#PWR08" H 8125 3425 50  0001 C CNN
+F 1 "GNDREF" H 8375 3400 50  0001 C CNN
+F 2 "" H 8125 3675 50  0001 C CNN
+F 3 "" H 8125 3675 50  0001 C CNN
+	1    8125 3675
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8125 3675 8125 3600
+Wire Wire Line
+	8125 3300 7775 3300
+Connection ~ 7775 3300
+Wire Wire Line
+	8125 3300 8300 3300
+Connection ~ 8125 3300
+$Comp
+L Device:Polyfuse_Small F1
+U 1 1 5FA237CD
+P 8400 3300
+F 0 "F1" V 8195 3300 50  0000 C CNN
+F 1 "PTC" V 8286 3300 50  0000 C CNN
+F 2 "Fuse:Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8450 3100 50  0001 L CNN
+F 3 "~" H 8400 3300 50  0001 C CNN
+F 4 "PTC RESET FUSE 30V 200MA 1206" H 8400 3300 50  0001 C CNN "Desc"
+F 5 "0ZCA0020FF2E" H 8400 3300 50  0001 C CNN "Part #"
+	1    8400 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Regulator_Switching:CRE1S0505SC U2
+U 1 1 62775CF9
+P 3150 3500
+F 0 "U2" H 3150 3967 50  0000 C CNN
+F 1 "B0505S" H 3150 3876 50  0000 C CNN
+F 2 "Converter_DCDC:Converter_DCDC_muRata_CRE1xxxxxxSC_THT" H 3150 3100 50  0001 C CNN
+F 3 "http://power.murata.com/datasheet?/data/power/ncl/kdc_cre1.pdf" H 3150 3000 50  0001 C CNN
+F 4 "DC DC CONVERTER 5V 1W" H 3150 3500 50  0001 C CNN "Desc"
+F 5 "B0505S-1WR3" H 3150 3500 50  0001 C CNN "Part #"
+	1    3150 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7175 3650 7775 3650
+$Comp
+L Device:R_POT_US R6
+U 1 1 6277D250
+P 7775 4250
+F 0 "R6" H 7708 4296 50  0000 R CNN
+F 1 "10K" H 7708 4205 50  0000 R CNN
+F 2 "Potentiometer_THT:Potentiometer_Bourns_3386X_Horizontal" H 7775 4250 50  0001 C CNN
+F 3 "~" H 7775 4250 50  0001 C CNN
+F 4 "RES 10K OHM 1% 1/10W 0805" H 7775 4250 50  0001 C CNN "Desc"
+	1    7775 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 3300 4175 3300
+$Comp
+L Connector_Generic:Conn_01x02 J1
+U 1 1 6278E82A
+P 1575 3450
+F 0 "J1" H 1550 3225 50  0000 L CNN
+F 1 "Conn_01x02" H 1655 3351 50  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1575 3450 50  0001 C CNN
+F 3 "~" H 1575 3450 50  0001 C CNN
+F 4 "0.1\" Header" H 1575 3450 50  0001 C CNN "Desc"
+	1    1575 3450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	1775 3450 2000 3450
+Wire Wire Line
+	2000 3450 2000 3300
+Wire Wire Line
+	2000 3300 2400 3300
+Wire Wire Line
+	1775 3550 2000 3550
+Wire Wire Line
+	2000 3550 2000 3700
+Wire Wire Line
+	2000 3700 2400 3700
+Text Label 2000 3300 0    50   ~ 0
++5Vin
+Text Label 2000 3700 0    50   ~ 0
+Gnd_In
+Text Notes 1225 3475 0    50   ~ 0
++5V In
+Text Notes 1225 3600 0    50   ~ 0
+Gnd In
+Text Label 3700 3300 0    50   ~ 0
++5V_ISO
+$Comp
+L power:GNDREF #PWR01
+U 1 1 62796C7D
+P 3775 3750
+F 0 "#PWR01" H 3775 3500 50  0001 C CNN
+F 1 "GNDREF" H 4025 3475 50  0001 C CNN
+F 2 "" H 3775 3750 50  0001 C CNN
+F 3 "" H 3775 3750 50  0001 C CNN
+	1    3775 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 3700 3775 3700
+Wire Wire Line
+	3775 3700 3775 3750
+$Comp
+L Device:C_Small C1
+U 1 1 6279EA22
+P 2400 3500
+F 0 "C1" H 2475 3525 50  0000 L CNN
+F 1 "1uF" H 2475 3400 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2400 3500 50  0001 C CNN
+F 3 "~" H 2400 3500 50  0001 C CNN
+F 4 "CAP CER 1uF 0805 X7R 50V" H 2400 3500 50  0001 C CNN "Desc"
+F 5 "CL21B105KBFNNNF" H 2400 3500 50  0001 C CNN "Part #"
+	1    2400 3500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 3600 2400 3700
+Connection ~ 2400 3700
+Wire Wire Line
+	2400 3700 2650 3700
+Wire Wire Line
+	2400 3400 2400 3300
+Connection ~ 2400 3300
+Wire Wire Line
+	2400 3300 2650 3300
+Wire Wire Line
+	4175 3375 4175 3300
+Connection ~ 4175 3300
+Wire Wire Line
+	4175 3300 4575 3300
+Connection ~ 5600 3300
+Wire Wire Line
+	8900 3300 8500 3300
+Wire Wire Line
+	8900 3500 8800 3500
+Text Notes 9350 3325 2    50   ~ 0
+Vout\n
+Text Notes 9500 3525 2    50   ~ 0
+Gnd Out
+$Comp
+L power:GNDREF #PWR03
+U 1 1 627BC2D5
+P 8800 3700
+F 0 "#PWR03" H 8800 3450 50  0001 C CNN
+F 1 "GNDREF" H 9050 3425 50  0001 C CNN
+F 2 "" H 8800 3700 50  0001 C CNN
+F 3 "" H 8800 3700 50  0001 C CNN
+	1    8800 3700
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	8800 3700 8800 3500
+Text Notes 9475 3175 2    50   ~ 0
+Isolated\n
+$Comp
+L Device:R_US R2
+U 1 1 627C53B4
+P 4575 3525
+F 0 "R2" H 4645 3571 50  0000 L CNN
+F 1 "390r" H 4645 3480 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4505 3525 50  0001 C CNN
+F 3 "~" H 4575 3525 50  0001 C CNN
+F 4 "RES 390 OHM 1% 1/10W 0805" H 4575 3525 50  0001 C CNN "Desc"
+	1    4575 3525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDREF #PWR02
+U 1 1 627C5D95
+P 4575 3750
+F 0 "#PWR02" H 4575 3500 50  0001 C CNN
+F 1 "GNDREF" H 4825 3475 50  0001 C CNN
+F 2 "" H 4575 3750 50  0001 C CNN
+F 3 "" H 4575 3750 50  0001 C CNN
+	1    4575 3750
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4575 3375 4575 3300
+Connection ~ 4575 3300
+Wire Wire Line
+	4575 3300 4950 3300
+Wire Wire Line
+	4575 3675 4575 3750
+$Comp
+L Device:R_US R4
+U 1 1 627CA92F
+P 5100 3300
+F 0 "R4" V 5050 3075 50  0000 L CNN
+F 1 "0r" V 5050 3375 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 5030 3300 50  0001 C CNN
+F 3 "~" H 5100 3300 50  0001 C CNN
+F 4 "RES 0 OHM JUMPER 0805" H 5100 3300 50  0001 C CNN "Desc"
+	1    5100 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5250 3300 5600 3300
+Text Notes 4450 4075 0    75   ~ 0
+Load \nResistor\n
+Text Notes 4900 3450 0    75   ~ 0
+Jumper
+$Comp
+L Device:R_US R5
+U 1 1 627CB8DA
+P 5975 3525
+F 0 "R5" H 6045 3571 50  0000 L CNN
+F 1 "100K" H 6045 3480 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 5905 3525 50  0001 C CNN
+F 3 "~" H 5975 3525 50  0001 C CNN
+F 4 "RES 100K OHM 1% 1/10W 0805" H 5975 3525 50  0001 C CNN "Desc"
+	1    5975 3525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5975 3375 5975 3300
+Connection ~ 5975 3300
+Wire Wire Line
+	5975 3300 6275 3300
+Wire Wire Line
+	5975 3750 5975 3675
+Wire Wire Line
+	5975 3750 6375 3750
+Text Label 5675 4100 0    50   ~ 0
+Ena
+Wire Wire Line
+	5975 3750 5975 4100
+Wire Wire Line
+	5975 4100 5675 4100
+Connection ~ 5975 3750
+$Comp
+L Connector_Generic:Conn_01x03 J2
+U 1 1 627D995F
+P 9100 3400
+F 0 "J2" H 9050 3175 50  0000 L CNN
+F 1 "Conn_01x03" H 9180 3351 50  0001 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 9100 3400 50  0001 C CNN
+F 3 "~" H 9100 3400 50  0001 C CNN
+F 4 "0.1\" Header" H 9100 3400 50  0001 C CNN "Desc"
+	1    9100 3400
+	1    0    0    -1  
+$EndComp
+Text Label 8600 3400 0    50   ~ 0
+Ena
+Wire Wire Line
+	8900 3400 8600 3400
+Text Notes 9450 3425 2    50   ~ 0
+Enable
+Wire Wire Line
+	7775 4400 7775 4600
+Wire Wire Line
+	7925 4250 8000 4250
+Wire Wire Line
+	8000 4250 8000 4050
+Wire Wire Line
+	8000 4050 7775 4050
+Connection ~ 7775 4050
+Wire Wire Line
+	7775 4050 7775 4100
+Text Notes 8200 3025 0    50   ~ 0
+Rated to handle >=30V\n1206 pkg
+$EndSCHEMATC
